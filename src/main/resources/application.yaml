@@ -1,0 +1,39 @@
+spring:
+    datasource:
+        #    url: jdbc:mariadb://neversay2.cafe24.com:3306/neversay2?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowMultiQueries=true
+        url: jdbc:mariadb://localhost:3306/neversay2?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowMultiQueries=true
+        driver-class-name: org.mariadb.jdbc.Driver
+        username: neversay2
+        password: jukddak1!
+
+    jpa:
+        hibernate:
+            ddl-auto: none
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        database-platform: org.hibernate.dialect.MariaDBDialect
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+#        use_sql_comments: true
+
+logging.level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
+decorator:
+    #  datasource:
+    #    p6spy:
+    #      enable-logging: true
+    #      multiline: true
+
+    thymeleaf:
+        cache: false # ??? ?? ???? (?? ??? ?? false? ??)
+        mode: HTML # Thymeleaf ?? ??
+        encoding: UTF-8 # ?? ??? ??
+        prefix: classpath:/templates/ # ??? ??? ??? ???? ??
+        suffix: .html # ??? ??? ??? ??
+
+server:
+    port: 80
